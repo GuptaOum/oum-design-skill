@@ -168,6 +168,29 @@ The stack (all free):
   becomes up to ~1M particles that react to the mouse; plain JS on a 2D
   canvas tops out near ~20k at 60 fps.
 
+How Three.js renders (so you pick the right level):
+- Your JavaScript is not compiled. It describes the scene; Three.js turns it
+  into GPU commands plus shader code; the browser and GPU driver compile the
+  shaders once (first draw) and reuse them every frame.
+- **Renderers:** `WebGLRenderer` is the default and runs everywhere.
+  `WebGPURenderer` is the newer option and falls back to WebGL where WebGPU
+  isn't supported. Use WebGPU when the project needs compute-heavy effects or
+  TSL; otherwise stay on WebGL.
+- **Where shader code comes from, cheapest first:**
+  1. Built-in materials (`MeshStandardMaterial`, `MeshPhysicalMaterial`,
+     `PointsMaterial`…): no GLSL to write; Three.js ships its own shaders
+     (`ShaderChunk` / `ShaderLib`). Use these whenever they can do the job.
+  2. `onBeforeCompile`: patch a built-in material's shader for a small twist.
+  3. `ShaderMaterial` (your vertex + fragment GLSL, Three.js adds helpers) or
+     `RawShaderMaterial` (you write everything): for truly custom effects.
+     Keep GLSL in `.glsl` files imported as strings (`?raw`).
+  4. **TSL (Three Shading Language):** write shader logic as JavaScript node
+     functions; Three.js generates WGSL for WebGPU or GLSL for WebGL from the
+     same code. Prefer TSL for new custom shaders on `WebGPURenderer`, and
+     for compute (GPU particle simulation without ping-pong textures).
+- Check TSL and WebGPU APIs through the Jarvis protocol every time: they are
+  new and change between Three.js releases.
+
 How to use it:
 - Prototype or explain a scene with the Three.js MCP (`learn_threejs`,
   `show_threejs_scene`), then build it in the project with R3F.
