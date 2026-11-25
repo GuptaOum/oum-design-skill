@@ -191,6 +191,32 @@ How Three.js renders (so you pick the right level):
 - Check TSL and WebGPU APIs through the Jarvis protocol every time: they are
   new and change between Three.js releases.
 
+TSL in practice (example: an animated graphite → silver gradient on a mesh):
+```js
+import * as THREE from "three/webgpu";
+import { Fn, uv, time, sin, mix, color } from "three/tsl";
+
+const material = new THREE.MeshBasicNodeMaterial();
+
+material.colorNode = Fn(() => {
+  const t = sin(time.add(uv().x.mul(3))).mul(0.5).add(0.5); // 0..1 wave over time
+  return mix(color("#1d1e22"), color("#a4a6ab"), t);        // graphite → silver
+})();
+
+const renderer = new THREE.WebGPURenderer(); // falls back to WebGL if needed
+```
+- Shader logic is plain JS functions (`time`, `uv()`, `sin`, `mix`,
+  `color`), assigned to material slots: `colorNode`, `positionNode`,
+  `opacityNode`, etc. No separate `.glsl` strings and no hand-declared
+  uniforms; editors autocomplete it and catch typos (avoiding GLSL's silent
+  "wrong name = 0" bug).
+- The same code compiles to WGSL (WebGPU) or GLSL (WebGL).
+- On WebGPU, TSL compute can run GPU particle physics without ping-pong
+  textures.
+- Needs a recent Three.js (`three/webgpu` + `three/tsl` imports). In React
+  Three Fiber, pass a `WebGPURenderer` to `<Canvas>`; confirm the current
+  way in the R3F docs, since support is evolving.
+
 How to use it:
 - Prototype or explain a scene with the Three.js MCP (`learn_threejs`,
   `show_threejs_scene`), then build it in the project with R3F.
