@@ -133,6 +133,9 @@ before shipping and credit it where the licence asks.
 | 3D scenes you can embed without coding 3D | **Spline** (free tier) — official **Spline MCP** (`spline`, `https://mcp.spline.design/mcp`) lets the agent build and edit scenes directly; calls count against a daily allowance | `@splinetool/react-spline` or iframe embed |
 | Ready WebGL effects (distortion, glow, particles on images) | **Unicorn Studio** (free tier; no MCP — the user designs the effect in its editor and shares the project ID / embed code) | Its embed script, lazy-loaded |
 | Animated WebGL gradient backgrounds | **AnimatedWebs** Gradient Studio | `animatedwebs:gradient` skill |
+| Animated gradient as a **video file** (pick colours, noise, grain, speed, camera; export) | **Gradient maker by Juan Garcia** (gradients.juangarcia.ch — free, no signup, no watermark; MP4 loops and stills up to 4K; settings saved in a shareable link; no code export; no licence stated, so ask the user to confirm use rights) | Compressed MP4 in `<video muted loop playsinline>` with a poster frame |
+| Animated gradient as **live code** (Stripe / Apple-style flowing mesh) | **ShaderGradient** (`@shadergradient/react`, tune visually on shadergradient.co) or **Paper Shaders** (`@paper-design/shaders-react`), both free | React component; pause offscreen |
+| Simple slow colour drift | Plain CSS (`@property` + animated radial / conic gradients) | No library |
 | Textures, PBR materials (metal, concrete, fabric), HDRI lighting, 3D models | **Poly Haven** and **ambientCG** (CC0, fully free) | Three.js / R3F materials and `useTexture` |
 | Real photos, maps, engravings, footage of the subject's world | Open collections via design-taste's `assets.mjs` (Openverse, Wikimedia, museums) | `public/` images, credited |
 | Shader ideas | **Shadertoy** | Study only: most shaders there are non-commercial licence, so rewrite, don't copy |
