@@ -1,4 +1,4 @@
-# 🛡️ Oum's Design Avengers
+# Oum's Design Avengers
 
 A skill that helps a coding agent design beautiful websites, step by step,
 like a team of Avengers where each hero has one job.
@@ -21,26 +21,26 @@ and upload it to your agent's skills.
 
 | Avenger | Tool | Job |
 |---|---|---|
-| 🕶️ Nick Fury | design-taste-frontend | Picks one clear design direction |
-| 🔮 Doctor Strange | Awwwards | Finds award-winning reference sites |
-| ✨ Scarlet Witch | AnimatedWebs | Cinematic heroes and animated backgrounds |
-| 🕷️ Spider-Man | Scrapling | Screenshots any website for reference |
-| 💎 Vision | Figma | Turns Figma designs into code |
-| 🦾 Iron Man | React and frontend skills | Builds the page |
-| 🤖 Jarvis | Context7 | Looks up the latest library docs |
-| 🧠 Professor X | Design plugin skills | Second-opinion design review |
-| ⚡ Thor | Framer Motion, GSAP, CSS | Adds motion |
-| 🐾 Wakanda | Apple design | Apple-style look and Liquid Glass |
-| 🌟 Captain Marvel | Three.js, React Three Fiber, GLSL, TSL | 3D, particles and shaders |
-| 🦝 Rocket | Spline | 3D scenes |
-| 🌳 Groot | Unicorn Studio | WebGL effects |
-| 🎧 Star-Lord | LottieFiles | Animated illustrations |
-| 🗡️ Gamora | Rive | Interactive animations |
-| 💪 Drax | Poly Haven, ambientCG | Free textures and materials |
-| 🕸️ Black Widow | emil-design-eng | Polishes the small details |
-| 🛡️ Captain America | impeccable | Honest design review |
-| 🏹 Hawkeye | Browser | Checks it on desktop and phone |
-| 💚 Hulk | break-ui | Tries to break the page |
+| `NF` Nick Fury | design-taste-frontend | Picks one clear design direction |
+| `DS` Doctor Strange | Awwwards | Finds award-winning reference sites |
+| `SW` Scarlet Witch | AnimatedWebs | Cinematic heroes and animated backgrounds |
+| `SM` Spider-Man | Scrapling | Screenshots any website for reference |
+| `VI` Vision | Figma | Turns Figma designs into code |
+| `IM` Iron Man | React and frontend skills | Builds the page |
+| `JA` Jarvis | Context7 | Looks up the latest library docs |
+| `PX` Professor X | Design plugin skills | Second-opinion design review |
+| `TH` Thor | Framer Motion, GSAP, CSS | Adds motion |
+| `WK` Wakanda | Apple design | Apple-style look and Liquid Glass |
+| `CM` Captain Marvel | Three.js, React Three Fiber, GLSL, TSL | 3D, particles and shaders |
+| `RO` Rocket | Spline | 3D scenes |
+| `GR` Groot | Unicorn Studio | WebGL effects |
+| `SL` Star-Lord | LottieFiles | Animated illustrations |
+| `GA` Gamora | Rive | Interactive animations |
+| `DX` Drax | Poly Haven, ambientCG | Free textures and materials |
+| `BW` Black Widow | emil-design-eng | Polishes the small details |
+| `CA` Captain America | impeccable | Honest design review |
+| `HE` Hawkeye | Browser | Checks it on desktop and phone |
+| `HU` Hulk | break-ui | Tries to break the page |
 
 All tools are free to use. If one isn't available, the team carries on
 without it.
