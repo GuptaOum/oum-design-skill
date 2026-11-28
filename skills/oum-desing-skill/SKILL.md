@@ -1,371 +1,220 @@
 ---
 name: oum-desing-skill
-description: Oum's "Design Avengers" — the end-to-end workflow for designing and building a beautiful web page or website from scratch by assembling the right design skills and MCP tools in the right order (research → direction → build → motion → polish → verify). Use this whenever the user wants to design, build, redesign or restyle a landing page, home page, event site, portfolio, marketing page, hero section or any public-facing web page, asks to make a site look premium / award-level / less generic, says "assemble", "design avengers", or "oum design", or starts a page with no design yet — even if they don't name any skill or tool.
+description: Oum's "Design Avengers" — an end-to-end workflow for designing and building a polished web page (landing page, home page, portfolio, event or product page, hero section) in the right order — research, direction, build, motion, polish, review, verify — calling only the tools the request needs, with a fallback for every tool. Use it whenever the user wants to design, build, redesign or restyle a public web page, asks to make one look premium, award-level or less generic, asks for motion, 3D, WebGL, gradients or an Apple-style look, or says "assemble", "design avengers" or "oum design".
 ---
 
 # Oum's Design Avengers
 
-A good-looking page is rarely the result of one tool. It comes from a sequence:
-know what great looks like, commit to one clear direction, build it cleanly,
-add motion with restraint, then look at it in a real browser and fix what's
-wrong. Each "Avenger" below owns one of those stages. Your job is to be the
-team lead: call each one at the right moment, carry decisions forward, and
-never skip the look-and-fix loop at the end.
+A good page comes from a sequence: know what great looks like, commit to one
+direction, build it cleanly, add motion with restraint, then look at it in a
+real browser and fix what's wrong. Each hero below owns one job. You are the
+team leader: call only the heroes the request needs, in order, and never skip
+the final look-and-fix.
 
-Load each skill **when you reach its stage**, not all up front — they are long,
-and loading them early just crowds out the context you need for the page itself.
+## How to use this skill
 
-## The team
+1. **Route the request.** Find the closest row in the routing table and run
+   only those steps.
+2. **For each step, check the toolbox.** If the tool is available, use it.
+   If it isn't, or it needs a sign-in the user hasn't done, use the fallback.
+   Never stop because a tool is missing.
+3. **Say your plan in one line** before starting: which steps and tools, and
+   any tool that needs the user to connect or sign in first.
+4. **Finish with step 7 (Verify).** Code that compiles is not a page that
+   looks right.
 
-| Avenger | Tool | Stage | Power |
-|---|---|---|---|
-| Nick Fury | `design-taste-frontend:design-taste-frontend` (skill) | Direction | Picks the idea, type, palette, composition; bans generic "AI-made" design |
-| Doctor Strange | **Awwwards MCP** (`mcp__awwwards__*`) | Research | Real award-winning references, design DNA, motion breakdowns, build scoring |
-| Scarlet Witch | **AnimatedWebs MCP** + `animatedwebs:*` skills | Research / Build | Cinematic heroes, video/WebGL backgrounds, animated components |
-| Spider-Man | **Scrapling MCP** | Research | Screenshots and content from any reference URL |
-| Vision | **Figma MCP** | Input | Turns the user's Figma designs into code (and back) |
-| Iron Man | `zizi-skills:frontend`, `react-patterns`, `vercel-react-best-practices` | Build | Clean, fast component code |
-| Jarvis | **Context7 MCP** (`resolve-library-id` → `query-docs`) | Build | Current official docs for Framer Motion, GSAP, R3F, Tailwind, Next.js — see "Jarvis protocol" below |
-| Professor X | Official design plugin: `design:*` skills, `artifact-design` | Review / Handoff | Official design critique, design system, accessibility, UX copy and handoff passes |
-| Thor | `animate:animate`, `animation-performance:animation-performance` | Motion | Purposeful animation that stays at 60fps |
-| Wakanda | `apple-design` skill | Direction / Polish | Apple-style restraint, type and spacing; Liquid Glass surfaces — see "Wakanda: Apple design and Liquid Glass" below |
-| Rocket | **Spline** + official **Spline MCP** (`spline`, `https://mcp.spline.design/mcp`) | 3D assets | Build and edit 3D scenes directly, then embed with `@splinetool/react-spline` |
-| Groot | **Unicorn Studio** (no MCP; user shares embed code / project ID) | WebGL effects | Ready distortion, glow, liquid and image-particle effects, embedded |
-| Star-Lord | **LottieFiles** (`@lottiefiles/dotlottie-react`) | Animated art | Lightweight animated illustrations, icons and loaders |
-| Drax | **Poly Haven**, **ambientCG** (CC0) | Textures | Free PBR materials, HDRI lighting and 3D models for Three.js / R3F |
-| Captain Marvel | **React Three Fiber + Three.js + GLSL shaders**, Three.js MCP (`learn_threejs`, `show_threejs_scene`), AnimatedWebs WebGL gradients | 3D / WebGL | Particles, 3D scenes, shader backgrounds, GPU physics — see "Captain Marvel's lab" below |
-| Black Widow | `emil-design-eng:emil-design-eng` | Polish | Easing, timing, hover/press states, invisible details |
-| Captain America | `impeccable:impeccable` | Review | Hierarchy, layout, spacing, color, copy, accessibility |
-| Hawkeye | Built-in browser pane / browser extension | Verify | Screenshots at desktop + mobile, dark mode, console errors |
-| Hulk | `break-ui:break-ui` | Verify | Smashes the page with long text, empty states, odd viewports |
+## Routing: what to run for each request
 
-Reserves (call when the page needs them): `theme-factory`
-(fast theme), `mobile-native` (phone feel), `design-skills:ux-writing`
-(headlines, buttons), `design-skills:accessibility-audit`,
-`web-design-guidelines:web-design-guidelines`, Canva MCP (posters/social graphics).
-
-**Call the team selectively.** Pick only the members the request needs (see
-"Scaling the mission"); never load every skill or hit every MCP by default.
-Name the members you are calling and why in one line before starting.
-
-## S.H.I.E.L.D. archive: every design skill, by job
-
-The full index of design skills installed for this user. Load one only when
-its job comes up; use the exact name shown.
-
-| Job | Skills |
+| The user asks for… | Run |
 |---|---|
-| Direction, taste, anti-generic | `design-taste-frontend:design-taste-frontend`, `design-skills:design-elevation`, `zizi-skills:design-guide`, `apple-design` |
-| Modern web platform and standards | `modern-web-guidance:modern-web-guidance` (current CSS/HTML/browser APIs), `web-design-guidelines:web-design-guidelines` |
-| Building pages and components | `zizi-skills:frontend`, `react-patterns`, `vercel-react-best-practices`, `nextjs-turbopack`, `zizi-skills:tabler-ui` (dashboards) |
-| Motion | `animate:animate`, `animation-vocabulary:animation-vocabulary` (name the effect you want), `animation-performance:animation-performance`, `emil-design-eng:emil-design-eng` |
-| Interaction and UX | `design-skills:interaction-design`, `design-skills:ux-strategy`, `design-skills:journey-mapping`, `zizi-skills:information-architecture` |
-| Critique and review | `impeccable:impeccable`, `design:design-critique`, `design-skills:design-critique` |
-| Design systems and tokens | `design:design-system`, `design-skills:design-systems`, `design-skills:design-ops`, `animatedwebs:style`, `theme-factory` |
-| Copy and words on the page | `design:ux-copy`, `design-skills:ux-writing`, `zizi-skills:plain-language` |
-| Accessibility | `design:accessibility-review`, `design-skills:accessibility-audit`, `chrome-devtools-mcp:a11y-debugging` |
-| Research | `design:user-research`, `design:research-synthesis`, `design-skills:ux-research` |
-| Handoff from Figma | `design:design-handoff` (+ Figma MCP) |
-| 3D, WebGL effects and animated art (tools, not skills — see the Guardians' asset bay) | **Spline** (Spline MCP `spline`), **Unicorn Studio** (embed), **LottieFiles** (`@lottiefiles/dotlottie-react`), **Poly Haven / ambientCG** (textures), React Three Fiber + GLSL + Three.js MCP |
-| Ready-made animated pieces | `animatedwebs:hero`, `animatedwebs:background`, `animatedwebs:gradient`, `animatedwebs:component`, `animatedwebs:site`, `animatedwebs:browse` |
-| Graphics and art | `zizi-skills:design-assets`, `canvas-design` (posters, static art), `algorithmic-art` (generative p5.js) |
-| Phone feel | `mobile-native` |
-| Speed and stress tests | `chrome-devtools-mcp:debug-optimize-lcp`, `break-ui:break-ui` |
-| Shareable artifact pages | `artifact-design` |
+| A new page or site from scratch | 0 → 7, all steps |
+| An existing page: "polish", "improve", "fix the design" | 0 (ask polish or redesign), 1 (light), 5, 6, 7 |
+| "It looks generic / AI-made / cheap" | 2, 6, 7 |
+| A single hero or section | 1, 2 (light), 3, 4, 7 |
+| "Animations feel off" or new motion | 4, 5, 7 |
+| 3D, particles, shaders, WebGL background | 1, 4 with the 3D guide, 7 |
+| "Make it look like Apple" / Liquid Glass | 2 with the Apple guide, 5, 6, 7 |
+| Art, 3D models, textures, animated illustrations | Asset guide, then 3, 7 |
+| A custom animated gradient | Gradient guide, then 3, 7 |
 
-## Thor's armoury: pick the right motion tool
+## The steps
 
-Motion libraries animate what you've built; they are not design frameworks
-(not like Material UI). Choose **one** primary tool per effect, by what the
-effect is, and match the project's stack:
+**0. Briefing.** Learn the page's purpose, audience, the one action a
+visitor should take, the content, and any brand (logo, colours, fonts) or
+Figma file. Read the project to learn its stack. Ask only what you can't
+infer. If the page already exists, look at it first, then ask: **polish**
+(keep the design, fix issues), **critique only**, or **full redesign kept
+separate** (new branch or page). Recommend polish unless it looks generic
+or broken.
 
-| The effect is… | Use | Why |
-|---|---|---|
-| UI motion in a React app: hover/press, fade-up on enter, layout and tab transitions, page transitions | **Framer Motion** (`motion`): `motion.div`, `whileInView`, `layoutId`, `AnimatePresence` | Lives in the JSX, React-native, light |
-| Scroll-driven scenes in React: pinned stage, values tied to scroll | **Framer Motion**: sticky CSS stage + scroll progress → `useSpring` → `useTransform` → `motion.*` `style` | Updates the element every frame without React re-renders |
-| Long, cinematic, multi-step timelines; award-style sequences; non-React or mixed stacks; SVG/morph/text splitting | **GSAP** + **ScrollTrigger** (in React via `@gsap/react` `useGSAP` with refs) | Most powerful timeline and scroll-pinning engine |
-| Thousands to millions of particles, 3D, shaders, real physics, GPU simulation | **React Three Fiber / Three.js + GLSL** | GSAP/Framer can't draw on a GPU canvas or run per-particle physics; they may only tween shader uniforms or camera on top |
-| Simple hover/focus states and one-shot reveals | **Plain CSS** transitions/keyframes + `IntersectionObserver` | No library needed |
+**1. Research.** Find 3–5 real references close to the page's purpose and
+mood, and show the user a short list with one line on why each fits. Learn
+patterns; never copy a site.
 
-Rules:
-- Don't add GSAP to a project already using Framer Motion (or the reverse)
-  unless one effect genuinely needs it; say why if you do.
-- The scroll-animation workflow for any library: **sticky stage → scroll
-  progress 0–1 → map progress to values → apply as styles.**
-- Always respect `prefers-reduced-motion` with a static fallback, and pause
-  render loops / videos when offscreen (`IntersectionObserver`).
-- Comparing libraries for the user: build the same small effect in each,
-  using Context7 for each library's current API.
+**2. Direction.** Commit to **one** idea: composition, type pairing, palette,
+imagery and a section-by-section plan, taken from the subject itself rather
+than category defaults. Write it down briefly so later steps don't drift.
+Mixing three references produces mush.
 
-## Wakanda: Apple design and Liquid Glass
+**3. Build.** Use the project's own stack. Set design tokens first (colour,
+type scale, spacing, radius) as variables, then build sections top to
+bottom. Use the general component library for everyday UI. Check library
+APIs in current docs before writing non-trivial code.
 
-Load `apple-design` when the user asks for an Apple-like look (apple.com
-product pages, macOS/iOS feel, "premium and minimal") or for Liquid Glass.
-Apple's habits: one idea per screen, big confident type, generous space,
-real product imagery, motion that explains rather than decorates.
+**4. Motion.** For each element decide whether it should move at all, then
+its purpose, property, curve and duration. Pick the tool from the motion
+guide. Respect `prefers-reduced-motion`.
 
-Liquid Glass on the web comes in two levels; pick the cheapest that reads right:
-1. **Frosted glass (CSS, default):** semi-transparent fill,
-   `backdrop-filter: blur(20–30px) saturate(150%)`, a 1px light edge
-   (`inset 0 0 0 1px rgba(255,255,255,.1)`), a brighter top highlight and a
-   soft shadow. Works everywhere, cheap. Use for navbars, cards, menus.
-2. **True refraction (shader):** the glass bends what's behind it like a
-   lens. Needs an SVG displacement filter (`feDisplacementMap`, Chromium-only)
-   or a GLSL refraction shader in React Three Fiber (Captain Marvel's lab).
-   Use only for one hero moment, never for every surface.
-Always keep text on glass readable (check contrast) and give a solid fallback
-when `backdrop-filter` or WebGL is unavailable.
+**5. Polish.** Every interactive element gets hover, focus-visible, active
+and disabled states; consistent easing and timing; tap feedback on phones.
 
-## The Guardians' asset bay: plug-and-play art, 3D and textures
+**6. Review.** Critique honestly: hierarchy, alignment, spacing rhythm,
+colour contrast (body text ≥ 4.5:1), copy, responsive layout. Fix what you
+find before moving on.
 
-Rocket (Spline), Groot (Unicorn Studio), Star-Lord (LottieFiles) and Drax (Poly Haven / ambientCG). Details:
+**7. Verify.** Run the page in a real browser. Screenshot at desktop and
+phone widths (and dark mode if supported), check the console for errors,
+stress it with long text, empty states and narrow screens. Fix and repeat
+until it holds up, then show the user the screenshots.
 
-When the page needs animated art, 3D or textures that don't exist yet, use
-free sources before drawing anything by hand. Check each asset's licence
-before shipping and credit it where the licence asks.
+## Toolbox
 
-| Need | Source (free) | How it plugs in |
-|---|---|---|
-| Animated illustrations, icons, loaders | **LottieFiles** (free animations, JSON / .lottie) | `@lottiefiles/dotlottie-react` or `lottie-web` |
-| 3D scenes you can embed without coding 3D | **Spline** (free tier) — official **Spline MCP** (`spline`, `https://mcp.spline.design/mcp`) lets the agent build and edit scenes directly; calls count against a daily allowance | `@splinetool/react-spline` or iframe embed |
-| Ready WebGL effects (distortion, glow, particles on images) | **Unicorn Studio** (free tier; no MCP — the user designs the effect in its editor and shares the project ID / embed code) | Its embed script, lazy-loaded |
-| Animated WebGL gradient backgrounds | **AnimatedWebs** Gradient Studio | `animatedwebs:gradient` skill |
-| Animated gradient as a **video file** (pick colours, noise, grain, speed, camera; export) | **Gradient maker by Juan Garcia** (gradients.juangarcia.ch — free, no signup, no watermark; MP4 loops and stills up to 4K; settings saved in a shareable link; no code export; no licence stated, so ask the user to confirm use rights) | Compressed MP4 in `<video muted loop playsinline>` with a poster frame |
-| Animated gradient as **live code** (Stripe / Apple-style flowing mesh) | **ShaderGradient** (`@shadergradient/react`, tune visually on shadergradient.co) or **Paper Shaders** (`@paper-design/shaders-react`), both free | React component; pause offscreen |
-| Simple slow colour drift | Plain CSS (`@property` + animated radial / conic gradients) | No library |
-| Textures, PBR materials (metal, concrete, fabric), HDRI lighting, 3D models | **Poly Haven** and **ambientCG** (CC0, fully free) | Three.js / R3F materials and `useTexture` |
-| Real photos, maps, engravings, footage of the subject's world | Open collections via design-taste's `assets.mjs` (Openverse, Wikimedia, museums) | `public/` images, credited |
-| Shader ideas | **Shadertoy** | Study only: most shaders there are non-commercial licence, so rewrite, don't copy |
+**Needs:** `none` works immediately · `install` add a package or skill ·
+`connect` add an MCP server, no account · `sign-in` the user must log in
+to an account before it works. Tell the user before using a `sign-in` tool.
 
-Rules: prefer the project's own media first; keep files light (compress
-video, cap Lottie size, lazy-load embeds); pause animations offscreen; and
-never present a generic asset as the client's own product.
+| Hero | Step | Tool | Job | Needs | If missing |
+|---|---|---|---|---|---|
+| Doctor Strange | 1 | Awwwards MCP | Award-winning references, design DNA, motion analysis | connect | Search the web for award-winning sites in the same category |
+| Spider-Man | 1 | Scrapling MCP | Screenshots and content of any reference URL | connect | Open the URL in the browser tool and screenshot it |
+| Scarlet Witch | 1, 3 | AnimatedWebs MCP | Cinematic heroes, video and WebGL backgrounds, animated components | **sign-in** (component code needs a paid plan) | Build the hero with the motion or 3D guide |
+| Vision | 0 | Figma MCP | Turns the user's Figma design into code | **sign-in** | Ask for screenshots of the design |
+| Nick Fury | 2 | `design-taste-frontend` skill | Commits to one non-generic direction | install | Follow step 2 above |
+| Wakanda | 2, 5 | `apple-design` skill | Apple-style restraint and Liquid Glass | install | Follow the Apple guide below |
+| Iron Man | 3 | Frontend and React skills | Clean, fast component code | install | Follow the project's own conventions |
+| Falcon | 3 | **shadcn/ui** | The one general component library: buttons, forms, dialogs, menus, tabs, cards | none (npm) | Build simple accessible components by hand |
+| Jarvis | 3, 4 | Context7 MCP | Current official docs for any library | connect | Read the library's official docs site |
+| Thor | 4 | `animate` skill + Framer Motion / GSAP / CSS | Purposeful motion at 60 fps | install / none | Use the motion guide below |
+| Captain Marvel | 4 | Three.js, React Three Fiber, GLSL, TSL; Three.js MCP | 3D, particles, shaders, GPU physics | none (npm); MCP: connect | Use the 3D guide below |
+| Rocket | assets | Spline + Spline MCP | Build and edit 3D scenes, embed them | **sign-in** (Spline account; daily call allowance) | Embed a public Spline scene URL, or use Three.js |
+| Groot | assets | Unicorn Studio | Ready WebGL effects: distortion, glow, liquid | **sign-in** (user designs it and shares the embed code) | Use the 3D guide or a gradient tool |
+| Star-Lord | assets | LottieFiles | Animated illustrations, icons, loaders | none to play; free account to download many files | Use CSS or SVG animation |
+| Drax | assets | Poly Haven, ambientCG | Free CC0 textures, materials, HDRIs, 3D models | none | — |
+| Black Widow | 5 | `emil-design-eng` skill | Easing, timing, micro-interactions | install | Follow step 5 above |
+| Captain America | 6 | `impeccable` skill | Design critique and fixes | install | Follow step 6 above |
+| Hawkeye | 7 | Browser tool (built-in pane, browser extension or Playwright) | Screenshots, console errors, responsive checks | connect | Ask the user to check and share screenshots |
+| Hulk | 7 | `break-ui` skill | Stress-tests long text, empty states, odd sizes | install | Follow step 7 above |
 
-## Captain Marvel's lab: WebGL, GLSL and React Three Fiber
+## Motion guide: pick one tool per effect
 
-Reach for this only when the effect really needs the GPU: particle images,
-3D objects or scenes, shader-driven backgrounds, distortion, or physics on
-thousands of points. A gradient or shader *background* that already exists is
-cheaper: try AnimatedWebs' WebGL gradients (`animatedwebs:gradient`) first.
+| The effect is… | Use |
+|---|---|
+| UI motion in React: hover, fade-up on enter, tab and page transitions | **Framer Motion** (`motion.div`, `whileInView`, `layoutId`, `AnimatePresence`) |
+| Scroll-driven scenes in React (pinned stage, values tied to scroll) | **Framer Motion**: sticky stage → scroll progress → `useSpring` → `useTransform` → `style` |
+| Long cinematic timelines, non-React sites, SVG morphs, text splitting | **GSAP + ScrollTrigger** (in React via `@gsap/react` `useGSAP` with refs) |
+| Thousands of particles, 3D, shaders, physics | **Three.js / React Three Fiber** (see the 3D guide) |
+| Simple hovers and one-shot reveals | **Plain CSS** transitions + `IntersectionObserver` |
 
-The stack (all free):
-- **Three.js**: the WebGL engine (scenes, cameras, materials, geometry).
-- **React Three Fiber (R3F)**: Three.js as React components: `<Canvas>`,
-  `<mesh>`, `useFrame` for the per-frame loop, `useThree` for the renderer.
-- **@react-three/drei**: ready helpers (orbit controls, text, environment,
-  loaders); check it before hand-writing a helper.
-- **GLSL shaders**: small GPU programs. *Vertex* shaders place each point,
-  *fragment* shaders colour each pixel. Write them in `.glsl` files imported
-  as strings (`import frag from "./x.frag.glsl?raw"`) and pass data in with
-  uniforms (every frame, same for all), attributes (once per point) and
-  textures.
-- **GPGPU** (simulation on the GPU): store each particle's position and
-  velocity in float textures and update them with shaders every frame
-  (`GPUComputationRenderer` handles the ping-pong). This is how an image
-  becomes up to ~1M particles that react to the mouse; plain JS on a 2D
-  canvas tops out near ~20k at 60 fps.
+Rules: don't add GSAP to a Framer Motion project (or the reverse) without a
+reason. Any scroll animation follows **sticky stage → progress 0–1 → map to
+values → apply as styles**. Pause animation and video when off screen.
 
-How Three.js renders (so you pick the right level):
-- Your JavaScript is not compiled. It describes the scene; Three.js turns it
-  into GPU commands plus shader code; the browser and GPU driver compile the
-  shaders once (first draw) and reuse them every frame.
-- **Renderers:** `WebGLRenderer` is the default and runs everywhere.
-  `WebGPURenderer` is the newer option and falls back to WebGL where WebGPU
-  isn't supported. Use WebGPU when the project needs compute-heavy effects or
-  TSL; otherwise stay on WebGL.
-- **Where shader code comes from, cheapest first:**
-  1. Built-in materials (`MeshStandardMaterial`, `MeshPhysicalMaterial`,
-     `PointsMaterial`…): no GLSL to write; Three.js ships its own shaders
-     (`ShaderChunk` / `ShaderLib`). Use these whenever they can do the job.
-  2. `onBeforeCompile`: patch a built-in material's shader for a small twist.
-  3. `ShaderMaterial` (your vertex + fragment GLSL, Three.js adds helpers) or
-     `RawShaderMaterial` (you write everything): for truly custom effects.
-     Keep GLSL in `.glsl` files imported as strings (`?raw`).
-  4. **TSL (Three Shading Language):** write shader logic as JavaScript node
-     functions; Three.js generates WGSL for WebGPU or GLSL for WebGL from the
-     same code. Prefer TSL for new custom shaders on `WebGPURenderer`, and
-     for compute (GPU particle simulation without ping-pong textures).
-- Check TSL and WebGPU APIs through the Jarvis protocol every time: they are
-  new and change between Three.js releases.
+## 3D guide: Three.js, React Three Fiber, shaders
 
-TSL in practice (example: an animated graphite → silver gradient on a mesh):
+Use it only when the effect needs the GPU. For a ready-made shader background,
+try a gradient tool first.
+
+**How rendering works.** JavaScript describes the scene; Three.js turns it
+into GPU commands and shader code; the browser compiles the shaders once and
+reuses them every frame. `WebGLRenderer` is the default and works everywhere;
+`WebGPURenderer` is newer and falls back to WebGL.
+
+**Shader types:** *vertex* places each corner, the GPU fills in the pixels
+inside each triangle, *fragment* colours each pixel, *compute* crunches data
+(real on WebGPU, emulated on WebGL by rendering into textures).
+
+**Where shader code comes from, cheapest first:**
+1. Built-in materials (`MeshStandardMaterial`, `PointsMaterial`…): no shader code.
+2. `onBeforeCompile`: patch a built-in material.
+3. `ShaderMaterial` / `RawShaderMaterial`: your own GLSL in `.glsl` files (`?raw` imports).
+4. **TSL**: shaders written in JavaScript, compiled to WGSL or GLSL.
+
 ```js
 import * as THREE from "three/webgpu";
 import { Fn, uv, time, sin, mix, color } from "three/tsl";
 
 const material = new THREE.MeshBasicNodeMaterial();
-
 material.colorNode = Fn(() => {
   const t = sin(time.add(uv().x.mul(3))).mul(0.5).add(0.5); // 0..1 wave over time
   return mix(color("#1d1e22"), color("#a4a6ab"), t);        // graphite → silver
 })();
-
-const renderer = new THREE.WebGPURenderer(); // falls back to WebGL if needed
+const renderer = new THREE.WebGPURenderer(); // falls back to WebGL
 ```
-- Shader logic is plain JS functions (`time`, `uv()`, `sin`, `mix`,
-  `color`), assigned to material slots: `colorNode`, `positionNode`,
-  `opacityNode`, etc. No separate `.glsl` strings and no hand-declared
-  uniforms; editors autocomplete it and catch typos (avoiding GLSL's silent
-  "wrong name = 0" bug).
-- The same code compiles to WGSL (WebGPU) or GLSL (WebGL).
-- On WebGPU, TSL compute can run GPU particle physics without ping-pong
-  textures.
-- Needs a recent Three.js (`three/webgpu` + `three/tsl` imports). In React
-  Three Fiber, pass a `WebGPURenderer` to `<Canvas>`; confirm the current
-  way in the R3F docs, since support is evolving.
 
-How to use it:
-- Prototype or explain a scene with the Three.js MCP (`learn_threejs`,
-  `show_threejs_scene`), then build it in the project with R3F.
-- Check current APIs via the Jarvis protocol: `@react-three/fiber`,
-  `@react-three/drei`, `three` (versions change often).
-- GSAP or Framer Motion may sit *on top*: tween a shader uniform, the camera,
-  or tie a uniform to scroll progress. They never replace the shaders.
+TSL and WebGPU APIs change often: check current docs before writing them.
 
-Performance and safety rules (always):
-- Pause the render loop when the canvas is offscreen (`IntersectionObserver`
-  → `frameloop="never"`/`"demand"`), and when the tab is hidden.
-- Cap pixel ratio (`dpr={[1, 2]}`), keep particle counts lower on phones, and
-  dispose geometries, materials, textures and render targets on unmount.
-- Provide a static image fallback for `prefers-reduced-motion` and for
-  devices without WebGL or float-texture support (try `HalfFloatType`).
-- Uniform/attribute names must match exactly between JS and GLSL; a typo
-  silently gives 0, so check names first when nothing moves.
+**Particles at scale:** store each particle's position and velocity in float
+textures and update them with shaders every frame (ping-pong), or use TSL
+compute on WebGPU. Plain JavaScript on a 2D canvas tops out near 20,000
+particles at 60 fps; the GPU handles about a million.
 
-## Jarvis protocol: Context7 before writing library code
+**Always:** pause the render loop off screen and when the tab is hidden; cap
+pixel ratio (`dpr={[1, 2]}`); use fewer particles on phones; dispose GPU
+resources on unmount; show a still image for reduced motion or no WebGL;
+match uniform and attribute names exactly between JS and GLSL (a typo
+silently gives 0).
 
-Library APIs change (Framer Motion is now published as `motion`; GSAP
-plugins and React Three Fiber versions move). Before writing non-trivial code
-for a library, fetch its current docs instead of relying on memory:
-1. `resolve-library-id` with the library name (e.g. "framer motion", "gsap",
-   "react three fiber", "tailwindcss", "next.js").
-2. `query-docs` with that id and the specific question ("useScroll with
-   sticky section", "ScrollTrigger pin with React useGSAP").
-Use the version in the project's `package.json` when the docs differ.
+## Apple guide: Apple look and Liquid Glass
 
-## Professor X: official design plugin tools
+Apple's habits: one idea per screen, big confident type, generous space, real
+product imagery, motion that explains rather than decorates.
 
-The official design plugin skills, for a second, principled opinion:
-- `design:design-critique` — structured feedback on hierarchy, usability,
-  consistency (run alongside `impeccable` in stage 6).
-- `design:design-system` — audit tokens/components for drift and hardcoded values.
-- `design:accessibility-review` — WCAG checks before shipping.
-- `design:ux-copy` — headlines, buttons, empty and error states.
-- `design:design-handoff` — specs for developers when the design came from Figma.
-- `artifact-design` — the design contract when the deliverable is a shareable
-  artifact page rather than the user's codebase.
+| Liquid Glass level | How | Use for |
+|---|---|---|
+| Frosted glass (default) | Translucent fill, `backdrop-filter: blur(20–30px) saturate(150%)`, 1px light edge, brighter top highlight, soft shadow | Navbars, cards, menus |
+| True refraction | SVG `feDisplacementMap` (Chromium only) or a GLSL refraction shader | One hero moment, never every surface |
 
-If a tool isn't available in the session (MCP not connected, skill missing),
-say so in one line and continue with the rest of the team — the workflow still
-works without any single member.
+Keep text on glass readable and give a solid fallback where `backdrop-filter`
+or WebGL is missing.
 
-## The mission (run in this order)
+## Asset guide: free art, 3D and textures
 
-### 0. Briefing — understand the page
-Before designing anything, get clear on: what the page is for, who it's for,
-the one action a visitor should take, the content that must appear, and any
-existing brand (logo, colors, fonts) or Figma file. Read the project to learn
-the stack (React? Tailwind? Next?) so the build matches it.
+Use the project's own media first. Check each asset's licence before
+shipping and credit it where required. Never present a stock asset as the
+client's own product.
 
-Ask only what you can't infer. If the user has a Figma link, call in Vision
-first and treat that design as the direction (skip most of stage 2).
+| Need | Source | Plugs in with |
+|---|---|---|
+| 3D scene | Spline | `@splinetool/react-spline` or iframe |
+| WebGL effect (distortion, glow, liquid) | Unicorn Studio | Its embed script, lazy-loaded |
+| Animated illustration, icon, loader | LottieFiles | `@lottiefiles/dotlottie-react` |
+| Textures, PBR materials, HDRIs, 3D models | Poly Haven, ambientCG (CC0) | Three.js / React Three Fiber textures |
+| Shader ideas | Shadertoy | Study only; most code there is non-commercial |
 
-**If the page already exists, ask before anything else: polish or redesign?**
-Open it in the browser, look at it and skim its code, then ask the user with
-the structured question tool (or in one line if there is none). Offer:
-- **Critique + polish** — keep the design and structure; fix what the checks
-  find. Runs stages 1 (light), 5, 6, 7.
-- **Critique only** — a written list of findings, no code changes.
-- **Full redesign, kept separate** — a new design as a separate page or on a
-  new git branch, so the current one stays untouched for comparison.
+## Gradient guide
 
-Describe what you saw (its look, its main sections, how big it is) so the
-user can decide without opening it themselves. Recommend polish when the page
-already has a clear direction, and redesign only when it looks generic or
-broken. Why ask: an existing page is someone's recent work, and a redesign
-throws it away. A "redesign" request about a well-built page usually means
-"make it better", which polish does without the loss. Skip the question only
-when the user has already said which they want.
+| You want | Use | Needs |
+|---|---|---|
+| A gradient **video** (pick colours, noise, speed; export MP4 or 4K stills) | Gradient maker at gradients.juangarcia.ch | none; no licence stated, confirm use rights |
+| A **live, coded** flowing gradient | ShaderGradient (`@shadergradient/react`) or Paper Shaders (`@paper-design/shaders-react`) | none (npm) |
+| A ready WebGL gradient for a hero | AnimatedWebs Gradient Studio | **sign-in** |
+| A slow colour drift | Plain CSS (`@property` + animated radial or conic gradients) | none |
 
-### 1. Research — Doctor Strange, Spider-Man, Scarlet Witch
-Find 3–5 real references close to the page's purpose and mood.
-- `mcp__awwwards__search_sites` (filters: tags, colors, technology, award) →
-  `get_site_details` / `compare_sites` for palette, type, stack, elements.
-- `mcp__awwwards__create_design_brief` turns 2–5 chosen slugs plus the
-  project goal into a cited brief — a strong handoff into stage 2.
-- AnimatedWebs `search_catalog` for heroes/backgrounds/components worth reusing.
-- Scrapling `screenshot` / `get` for any non-Awwwards reference the user names.
+A video gives exactly what was designed with no runtime code; live code stays
+sharp at any size and can react to the mouse or scroll.
 
-Show the user the shortlist (name, why it fits) and let them react — taste is
-theirs to decide. References are for learning patterns, never for copying a
-site wholesale; Awwwards data is for personal, non-commercial inspiration.
+## Rules that always apply
 
-### 2. Direction — Nick Fury
-Load `design-taste-frontend:design-taste-frontend` and follow it to commit to **one**
-direction: the idea, composition, type pairing, palette, imagery, and a
-section-by-section blueprint. Feed it what stage 1 learned. Write the decision
-down briefly (in the reply or a short DESIGN.md if the project keeps one) so
-later stages don't drift.
+- Call only the tools the request needs, and name them first.
+- One design direction, never a blend.
+- Check current library docs before writing library code; match the version in `package.json`.
+- Respect `prefers-reduced-motion`; pause video, WebGL and animation off screen.
+- Keep media light: compress video, lazy-load embeds, add poster frames.
+- Before using a `sign-in` tool, tell the user it needs their account.
+- If a tool fails or is missing, use its fallback and say so in one line.
 
-Why one direction: mixing three references produces mush. A single, confident
-idea is what makes a page look designed.
+## Report back
 
-### 3. Build — Iron Man + Jarvis
-Build in the project's own stack and conventions. Use Context7 for library APIs
-instead of guessing. Set design tokens (color, type scale, spacing, radius) as
-variables first, then build sections top to bottom. Use AnimatedWebs components
-or backgrounds where they fit the direction rather than hand-rolling effects.
-
-### 4. Motion — Thor (+ Doctor Strange for reference motion)
-Load `animate:animate`. Decide per element whether it should move at
-all, then purpose, property, curve, duration. Pick the library from "Thor's
-armoury" above and check its API through the Jarvis protocol (Context7). If a reference site's motion is
-the target, study it with `mcp__awwwards__analyze_scroll_map`,
-`analyze_hover_census` or `get_motion_dna` (these need Playwright — installed
-globally on this machine), and optionally `build_gsap_stub`.
-If anything stutters, load `animation-performance:animation-performance`.
-Always respect `prefers-reduced-motion`.
-
-### 5. Polish — Black Widow
-Load `emil-design-eng:emil-design-eng` and pass over every interactive
-element: hover/focus/active states, transition timing and easing, entrance
-choreography, tap feedback on mobile.
-
-### 6. Review — Captain America
-Load `impeccable:impeccable` and critique the page honestly: hierarchy,
-alignment, spacing rhythm, color contrast, copy, responsive behavior. Fix what
-it finds before moving on.
-
-### 7. Verify — Hawkeye + Hulk (do not skip)
-Code that compiles is not a page that looks right. Start the dev server with
-the browser pane (`preview_start`), then:
-- screenshot at desktop and mobile (`resize_window` preset `mobile`), and dark
-  mode if the site supports it;
-- check console errors;
-- load `break-ui:break-ui` for long text, empty states, narrow widths;
-- optionally `mcp__awwwards__verify_build` against the chosen reference, and
-  `analyze_accessibility` / `audit_url` for evidence on contrast and perf.
-
-Fix, re-screenshot, repeat until it holds up. Then show the user the final
-screenshots.
-
-## Scaling the mission
-Not every request needs the full team.
-- **Whole page or site from scratch** → all stages.
-- **Existing page** → ask polish or redesign first (stage 0). Polish runs
-  1 (light), 5, 6, 7; redesign runs all stages, kept separate from the old page.
-- **Just a hero / one section** → 1 (AnimatedWebs first), 2 (light), 3, 4, 7.
-- **"It looks generic / AI-made"** → 2 and 6 are the heart; then 7.
-- **"Animations feel off"** → 4, 5, 7.
-- **3D, particles, shaders or a WebGL background** → 1 (AnimatedWebs and
-  Awwwards for references), Captain Marvel's lab, 4, 7.
-- **"Make it look like Apple" / Liquid Glass** → Wakanda (`apple-design`),
-  then 2, 5, 6, 7.
-- **"I need art / textures / animated illustrations"** → the Guardians'
-  asset bay (Spline for 3D, Unicorn Studio for WebGL effects, LottieFiles for
-  animated art, Poly Haven / ambientCG for textures), then 3 and 7.
-
-## Reporting back
-End with: what direction was chosen and why (one or two lines), which
-references inspired it, screenshots (desktop + mobile), and anything not done
-or not verified.
+End with: the direction chosen and why (one or two lines), the references
+that inspired it, desktop and phone screenshots, any tool that needed a
+sign-in and wasn't available, and anything not done or not verified.
