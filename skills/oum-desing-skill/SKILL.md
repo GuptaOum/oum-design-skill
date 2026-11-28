@@ -20,6 +20,15 @@ the final look-and-fix.
    Never stop because a tool is missing.
 3. **Say your plan in one line** before starting: which steps and tools, and
    any tool that needs the user to connect or sign in first.
+   **Ask for better tools when they'd help.** If the request would clearly
+   gain from a `connect` or `sign-in` tool that isn't set up (for example a
+   Figma file, a Spline 3D scene, AnimatedWebs heroes, live reference
+   screenshots), tell the user once, before building, in this form:
+   *"This would be better with **<tool>**: <what it adds>. It needs
+   <connect / sign-in / paid plan>. Set it up, or should I continue with
+   <fallback>?"* Mention only the tools that matter for this request (at
+   most three), never block on the answer if the user says continue, and
+   don't ask again for the same tool in the same task.
 4. **Finish with step 7 (Verify).** Code that compiles is not a page that
    looks right.
 
@@ -211,6 +220,9 @@ sharp at any size and can react to the mouse or scroll.
 - Respect `prefers-reduced-motion`; pause video, WebGL and animation off screen.
 - Keep media light: compress video, lazy-load embeds, add poster frames.
 - Before using a `sign-in` tool, tell the user it needs their account.
+- When a `connect` or `sign-in` tool would clearly improve the result and
+  isn't set up, offer it to the user with what it adds, what it needs and the
+  fallback (see "How to use this skill", point 3).
 - If a tool fails or is missing, use its fallback and say so in one line.
 
 ## Report back
