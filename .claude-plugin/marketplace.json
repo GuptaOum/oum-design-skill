@@ -1,13 +1,13 @@
 {
   "name": "oum-design",
   "owner": { "name": "GuptaOum", "url": "https://github.com/GuptaOum" },
-  "metadata": { "description": "Oum's design workflow skills", "version": "1.2.0" },
+  "metadata": { "description": "Oum's design workflow skills", "version": "1.2.1" },
   "plugins": [
     {
       "name": "oum-design-skill",
       "source": "./",
       "description": "Design Avengers: an end-to-end web design workflow with motion, WebGL and free asset guides.",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "category": "design"
     }
   ]
