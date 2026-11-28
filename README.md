@@ -35,7 +35,6 @@ and upload it to your agent's skills.
 | `RO` Rocket | Spline | 3D scenes |
 | `GR` Groot | Unicorn Studio | WebGL effects |
 | `SL` Star-Lord | LottieFiles | Animated illustrations |
-| `GA` Gamora | Rive | Interactive animations |
 | `DX` Drax | Poly Haven, ambientCG | Free textures and materials |
 | `BW` Black Widow | emil-design-eng | Polishes the small details |
 | `CA` Captain America | impeccable | Honest design review |
@@ -73,7 +72,7 @@ the right heroes, in the right order:
 | "Animations feel off" | Thor, Black Widow, Hawkeye |
 | 3D or particles | Captain Marvel, Thor, Hawkeye |
 | "Make it look like Apple" | Wakanda, Black Widow, Captain America |
-| Art, 3D or textures | The Guardians: Rocket, Groot, Star-Lord, Gamora, Drax |
+| Art, 3D or textures | The Guardians: Rocket, Groot, Star-Lord, Drax |
 
 ---
 

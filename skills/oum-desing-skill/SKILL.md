@@ -32,7 +32,6 @@ and loading them early just crowds out the context you need for the page itself.
 | Rocket | **Spline** + official **Spline MCP** (`spline`, `https://mcp.spline.design/mcp`) | 3D assets | Build and edit 3D scenes directly, then embed with `@splinetool/react-spline` |
 | Groot | **Unicorn Studio** (no MCP; user shares embed code / project ID) | WebGL effects | Ready distortion, glow, liquid and image-particle effects, embedded |
 | Star-Lord | **LottieFiles** (`@lottiefiles/dotlottie-react`) | Animated art | Lightweight animated illustrations, icons and loaders |
-| Gamora | **Rive** (`@rive-app/react-canvas`) | Interactive art | Animations that react to hover, clicks and state |
 | Drax | **Poly Haven**, **ambientCG** (CC0) | Textures | Free PBR materials, HDRI lighting and 3D models for Three.js / R3F |
 | Captain Marvel | **React Three Fiber + Three.js + GLSL shaders**, Three.js MCP (`learn_threejs`, `show_threejs_scene`), AnimatedWebs WebGL gradients | 3D / WebGL | Particles, 3D scenes, shader backgrounds, GPU physics — see "Captain Marvel's lab" below |
 | Black Widow | `emil-design-eng:emil-design-eng` | Polish | Easing, timing, hover/press states, invisible details |
@@ -67,7 +66,7 @@ its job comes up; use the exact name shown.
 | Accessibility | `design:accessibility-review`, `design-skills:accessibility-audit`, `chrome-devtools-mcp:a11y-debugging` |
 | Research | `design:user-research`, `design:research-synthesis`, `design-skills:ux-research` |
 | Handoff from Figma | `design:design-handoff` (+ Figma MCP) |
-| 3D, WebGL effects and animated art (tools, not skills — see the Guardians' asset bay) | **Spline** (Spline MCP `spline`), **Unicorn Studio** (embed), **LottieFiles** (`@lottiefiles/dotlottie-react`), **Rive** (`@rive-app/react-canvas`), **Poly Haven / ambientCG** (textures), React Three Fiber + GLSL + Three.js MCP |
+| 3D, WebGL effects and animated art (tools, not skills — see the Guardians' asset bay) | **Spline** (Spline MCP `spline`), **Unicorn Studio** (embed), **LottieFiles** (`@lottiefiles/dotlottie-react`), **Poly Haven / ambientCG** (textures), React Three Fiber + GLSL + Three.js MCP |
 | Ready-made animated pieces | `animatedwebs:hero`, `animatedwebs:background`, `animatedwebs:gradient`, `animatedwebs:component`, `animatedwebs:site`, `animatedwebs:browse` |
 | Graphics and art | `zizi-skills:design-assets`, `canvas-design` (posters, static art), `algorithmic-art` (generative p5.js) |
 | Phone feel | `mobile-native` |
@@ -119,8 +118,7 @@ when `backdrop-filter` or WebGL is unavailable.
 
 ## The Guardians' asset bay: plug-and-play art, 3D and textures
 
-Rocket (Spline), Groot (Unicorn Studio), Star-Lord (LottieFiles), Gamora
-(Rive) and Drax (Poly Haven / ambientCG). Details:
+Rocket (Spline), Groot (Unicorn Studio), Star-Lord (LottieFiles) and Drax (Poly Haven / ambientCG). Details:
 
 When the page needs animated art, 3D or textures that don't exist yet, use
 free sources before drawing anything by hand. Check each asset's licence
@@ -129,7 +127,6 @@ before shipping and credit it where the licence asks.
 | Need | Source (free) | How it plugs in |
 |---|---|---|
 | Animated illustrations, icons, loaders | **LottieFiles** (free animations, JSON / .lottie) | `@lottiefiles/dotlottie-react` or `lottie-web` |
-| Interactive animations that react to hover/clicks | **Rive** community files (free tier) | `@rive-app/react-canvas` |
 | 3D scenes you can embed without coding 3D | **Spline** (free tier) — official **Spline MCP** (`spline`, `https://mcp.spline.design/mcp`) lets the agent build and edit scenes directly; calls count against a daily allowance | `@splinetool/react-spline` or iframe embed |
 | Ready WebGL effects (distortion, glow, particles on images) | **Unicorn Studio** (free tier; no MCP — the user designs the effect in its editor and shares the project ID / embed code) | Its embed script, lazy-loaded |
 | Animated WebGL gradient backgrounds | **AnimatedWebs** Gradient Studio | `animatedwebs:gradient` skill |
@@ -365,8 +362,8 @@ Not every request needs the full team.
 - **"Make it look like Apple" / Liquid Glass** → Wakanda (`apple-design`),
   then 2, 5, 6, 7.
 - **"I need art / textures / animated illustrations"** → the Guardians'
-  asset bay (Spline for 3D, Unicorn Studio for WebGL effects, LottieFiles or
-  Rive for animated art, Poly Haven / ambientCG for textures), then 3 and 7.
+  asset bay (Spline for 3D, Unicorn Studio for WebGL effects, LottieFiles for
+  animated art, Poly Haven / ambientCG for textures), then 3 and 7.
 
 ## Reporting back
 End with: what direction was chosen and why (one or two lines), which
